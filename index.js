@@ -269,6 +269,7 @@ app.get("/search-note/", authenticateToken, async (req, res) => {
             $or: [
                 { title: { $regex: new RegExp(query, "i")}},
                 { content: { $regex: new RegExp(query, "i")}},
+                { tags: { $regex: new RegExp(query, "i")}},
             ],
         });
 
